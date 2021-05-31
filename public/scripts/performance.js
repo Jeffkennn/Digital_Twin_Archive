@@ -79,17 +79,17 @@ function initPerformanceTab(mainViewer) {
             type: 'line',
             data: {
                 datasets: [{
-                    label: 'Min [mm/s]',
+                    label: 'Min [pc/day]',
                     borderColor: 'rgba(255, 192, 0, 1.0)',
                     backgroundColor: 'rgba(255, 192, 0, 0.5)',
                     data: []
                 },{
-                    label: 'Avg [mm/s]',
+                    label: 'Avg [pc/day]',
                     borderColor: 'rgba(192, 128, 0, 1.0)',
                     backgroundColor: 'rgba(192, 128, 0, 0.5)',
                     data: []
                 },{
-                    label: 'Max [mm/s]',
+                    label: 'Max [pc/day]',
                     borderColor: 'rgba(128, 64, 0, 1.0)',
                     backgroundColor: 'rgba(128, 64, 0, 0.5)',
                     data: []
@@ -112,7 +112,7 @@ function initPerformanceTab(mainViewer) {
             data: {
                 labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
                 datasets: [{
-                    label: 'Avg. Temp.',
+                    label: 'Energy Consumed',
                     data: [12, 19, 3, 5, 2, 3].map(i => Math.floor(Math.random() * 100)),
                     backgroundColor: [
                         'rgba(192, 128, 0, 0.5)',
@@ -190,11 +190,11 @@ function initPerformanceTab(mainViewer) {
         if (ids.length === 1) {
             dbid = ids[0];
 
-            // Generate a set of random temperatures (between 95.0 and 105.0) with dbId as seed
+            // Generate a set of random temperatures (between 75.0 and 115.0) with dbId as seed
             let rng = new RandomNumberGenerator(dbid);
             let temperatures = [];
             for (let i = 0; i < 6; i++) {
-                temperatures.push(95.0 + rng.nextFloat() * 10.0);
+                temperatures.push(75.0 + rng.nextFloat() * 40.0);
             }
             partTemperaturesChart.data.datasets[0].data = temperatures;
             partTemperaturesChart.update();
